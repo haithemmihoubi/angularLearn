@@ -1,3 +1,36 @@
-<app-navbar></app-navbar>
 <p> THis is home page</p>
-<app-footer></app-footer>
+<h1 [style]="titleStyle"> Welcome </h1>
+<button (click)="show()">change to red</button>
+<button (click)="hide()">change to green</button>
+
+
+<br>
+<!--
+<p>first name :{{ profile.firstname }} </p>
+<p>{{ profile.lastname   }} my country :{{ profile.country}}</p>
+<p>{{ profile.age }}</p>
+<img [src]="linkImage" alt="flutter" width="50" height="50">
+<hr>
+<h1>{{ number}}</h1>
+<button (click)="inc()" >increment</button>
+<button (click)="dec()" >decrement</button>-->
+
+<h1>{{ number}}</h1>
+<p>first name :{{ profile.firstname }} </p>
+<p>{{ profile.lastname   }}</p>
+  <input type="text" [(ngModel)]="number">
+  <input type="text" [(ngModel)]="profile.firstname">
+  <input type="text" [(ngModel)]="profile.lastname">
+
+
+
+
+
+
+
+
+
+
+
+
+
