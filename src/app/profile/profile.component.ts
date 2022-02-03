@@ -7,9 +7,9 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  private _name = ''
-  private _id = ''
-  private _country = ''
+  public name = ''
+  public id = ''
+  public country = ''
 
   constructor(public route: ActivatedRoute) {
     /*this.route.params.subscribe(data => {
@@ -18,37 +18,14 @@ export class ProfileComponent implements OnInit {
     })*/
     this.route.queryParams.subscribe(
       data => {
-        this._name = data['name']
-        this._id = data['id']
-        this._country = data['country']
+        this.name = data['name']
+        this.id = data['id']
+        this.country = data['country']
       }
     )
 
   }
 
-  get name(): string {
-    return this._name;
-  }
-
-  set name(value: string) {
-    this._name = value;
-  }
-
-  get id(): string {
-    return this._id;
-  }
-
-  set id(value: string) {
-    this._id = value;
-  }
-
-  get country(): string {
-    return this._country;
-  }
-
-  set country(value: string) {
-    this._country = value;
-  }
 
   ngOnInit(): void {
   }
