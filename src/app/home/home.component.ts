@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {reduce} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,11 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  constructor() {
+  }
+  ngOnInit(): void {
+  }
+  // declare an object
   profile = {
     firstname: "haithem",
     lastname: "mihoubi",
@@ -16,13 +22,21 @@ export class HomeComponent implements OnInit {
   linkImage = "https://www.ideematic.com/wp-content/uploads/2020/07/flutter_logo.png"
   titleStyle = "color:blue;"
   number = 0
+  verify=true
 
-  constructor() {
+  countries=['algerie','tunisie','morroco']
 
-  }
+titleClass="title"
 
-  ngOnInit(): void {
-  }
+jsonProfile={
+  "firstname": "haithem",
+  "lastname": "mihoubi",
+  "website": "haithem.com",
+  "country": "tunisia",
+  "age": 25
+}
+
+
 
   inc() {
     this.number++
@@ -33,10 +47,22 @@ export class HomeComponent implements OnInit {
   }
 
   show() {
-    this.titleStyle = "color:red;font-size:20px"
+    this.titleStyle = ""
   }
 
   hide() {
-    this.titleStyle = "color:green;font-size:40px"
+    this.titleStyle = "visibility:hidden"
   }
+
+  // style
+  style1="red"
+  style2="30px"
+  style3="underline"
+
+
+
+
+
+
+
 }

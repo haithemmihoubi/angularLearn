@@ -1,10 +1,10 @@
-<p> THis is home page</p>
+<!--<p> THis is home page</p>
 <h1 [style]="titleStyle"> Welcome </h1>
 <button (click)="show()">change to red</button>
 <button (click)="hide()">change to green</button>
 
 
-<br>
+<br>-->
 <!--
 <p>first name :{{ profile.firstname }} </p>
 <p>{{ profile.lastname   }} my country :{{ profile.country}}</p>
@@ -14,23 +14,30 @@
 <h1>{{ number}}</h1>
 <button (click)="inc()" >increment</button>
 <button (click)="dec()" >decrement</button>-->
-
+<!--
 <h1>{{ number}}</h1>
 <p>first name :{{ profile.firstname }} </p>
 <p>{{ profile.lastname   }}</p>
   <input type="text" [(ngModel)]="number">
   <input type="text" [(ngModel)]="profile.firstname">
-  <input type="text" [(ngModel)]="profile.lastname">
+  <input type="text" [(ngModel)]="profile.lastname">-->
+<!--
+<p *ngIf="verify" > welcome  haithem </p>
+
+<p *ngFor="let country of countries; index as i" >
+
+  {{ i+1 }}:{{ country }}
+</p>-->
 
 
+<!--<p [ngClass]="titleClass" >hello haithem</p>-->
 
+<!--
+<p [ngStyle]="{'colo':style1,'font-size':style2,'text-decoration':style3 }">welcome to haithem page</p>
+-->
 
-
-
-
-
-
-
-
-
-
+<!-- pipe-->
+<!--<p>{{ profile.lastname | uppercase}}</p>
+<p>{{ profile.firstname | lowercase}}</p>
+&lt;!&ndash;  profile json data&ndash;&gt;-->
+<p>{{ jsonProfile | json }}</p>
