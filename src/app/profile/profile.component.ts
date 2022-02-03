@@ -11,21 +11,25 @@ export class ProfileComponent implements OnInit {
   public id = ''
   public country = ''
 
-  constructor(public route: ActivatedRoute) {
-    /*this.route.params.subscribe(data => {
-      this.id = data['id']
-      this.name = data['name']
-    })*/
-    this.route.queryParams.subscribe(
-      data => {
-        this.name = data['name']
+  /*  constructor(public route: ActivatedRoute) {
+      /!*this.route.params.subscribe(data => {
         this.id = data['id']
-        this.country = data['country']
-      }
-    )
+        this.name = data['name']
+      })*!/
+      /!*this.route.queryParams.subscribe(
+        data => {
+          this.name = data['name']
+          this.id = data['id']
+          this.country = data['country']
+        })*!/
+
+
+    }*/
+
+
+  constructor() {
 
   }
-
 
   ngOnInit(): void {
   }
