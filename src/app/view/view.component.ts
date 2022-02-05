@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-view',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewComponent implements OnInit {
 
-  constructor() { }
+  newName =''
+  constructor(private  r:ActivatedRoute) {
+    this.r.params.subscribe(data=>{
+      this.newName=data['name']
+    })
+  }
 
   ngOnInit(): void {
   }
