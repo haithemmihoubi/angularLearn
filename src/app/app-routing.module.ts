@@ -3,10 +3,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {AboutComponent} from "./about/about.component";
 import {ProfileComponent} from "./profile/profile.component";
-import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {ViewComponent} from "./view/view.component";
 import {DetailsComponent} from "./details/details.component";
-import {ProfilComponent} from "./profil/profil.component";
 import {GuardAdminGuard} from "./guards/guard-admin.guard";
 
 const routes: Routes = [
@@ -20,20 +18,16 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
-    canActivate:[GuardAdminGuard]
-  },//children routes
+    canActivate: [GuardAdminGuard]
+  },
   {
     path: 'profil',
-
     children: [
       {path: 'view/:name', component: ViewComponent},
-      {path: 'details', component: DetailsComponent},
+      {path: 'details', component: DetailsComponent}
     ]
   },
-
-
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 import {ShareServiceService} from "../services/share-service.service";
 
 @Injectable({
@@ -8,20 +8,20 @@ import {ShareServiceService} from "../services/share-service.service";
 })
 export class GuardAdminGuard implements CanActivate {
 
-  constructor(private  share:ShareServiceService,private  router:Router) {
+  constructor(private share: ShareServiceService, private router: Router) {
   }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return new Promise((resolve,reject) => {
-      if (this.share.isAdmin){
-        resolve(true)
-      }else{
-        this.router.navigate(['/'])
-        resolve(false)
-      }
-    });
+    return new Promise((resolve, reject) => {
+        if (this.share.isAdmin) {
+          resolve(true)
+        } else {
+          this.router.navigate(['/'])
+          resolve(false)
+        }
+      });
   }
 
 }

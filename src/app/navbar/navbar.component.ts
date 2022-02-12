@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ShareServiceService} from "../services/share-service.service";
 
 @Component({
@@ -7,9 +7,11 @@ import {ShareServiceService} from "../services/share-service.service";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
- verifAdmin :boolean =false
-  constructor(private  share:ShareServiceService) {
-    this.verifAdmin=this.share.isAdmin
+
+  verifAdmin: boolean = false
+
+  constructor(private share: ShareServiceService) {
+    this.verifAdmin = this.share.isAdmin
   }
 
   ngOnInit(): void {
