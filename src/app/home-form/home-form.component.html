@@ -1,1 +1,41 @@
-<p>home-form works!</p>
+<form #f="ngForm" (ngSubmit)="add(f)">
+  <br>
+  <input type="text" name="firstname" placeholder="enter your firstname" minlength="5" maxlength="15" required
+         #firstname="ngModel" ngModel>
+  <div class="alert alert-danger" *ngIf="firstname.errors?.['required'] && firstname.touched">
+    firstname is required
+  </div>
+  <br>
+  <div class="alert alert-danger" *ngIf="firstname.errors?.['minlength'] && firstname.touched">
+    firstname is must contains at least 5 chacarcter
+  </div>
+  <div class="alert alert-danger" *ngIf="firstname.errors?.['maxlength'] && firstname.touched">
+    firstname is musnt contains up  to 15
+  </div>
+  <input type="text" name="lastname" placeholder="enter your lastname" maxlength="15" minlength="4"  #lastname="ngModel" required ngModel>
+  <br>
+  <div class="alert alert-danger" *ngIf="lastname.errors?.['required'] && lastname.touched">
+    lastname is required
+  </div>
+  <div class="alert alert-danger" *ngIf="lastname.errors?.['minlength'] && lastname.touched">
+    lastname must contain at least 4 characters
+  </div>
+  <div class="alert alert-danger" *ngIf="lastname.errors?.['maxlength'] && lastname.touched">
+    lastname musn't contain more than 15 characters
+  </div>
+
+  <input type="number" name="age" placeholder="enter your age" required ngModel #age="ngModel"> <br>
+  <div class="alert alert-danger" *ngIf="age.errors?.['required'] && age.touched">
+    age must be checked
+  </div>
+  <!--  <input type="radio" name="sexe" id="sexe" value="men" ngModel> <br>
+
+    <textarea name="message" id="" cols="30" rows="10" ngModel></textarea> <br>
+
+    <input type="checkbox" name="quiz" ngModel> <br>
+    <br>
+
+    <input type="checkbox" name="quiz2" ngModel>
+    <br>-->
+  <button type="submit" name="add" [disabled]="f.invalid"  >add</button>
+</form>

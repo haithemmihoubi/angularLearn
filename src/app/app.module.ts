@@ -14,6 +14,7 @@ import {ViewComponent} from './view/view.component';
 import {DetailsComponent} from './details/details.component';
 import {ProfilComponent} from './profil/profil.component';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import { HomeFormComponent } from './home-form/home-form.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
     ViewComponent,
     DetailsComponent,
     ProfilComponent,
+    HomeFormComponent,
   ],
   imports: [
     BrowserModule,

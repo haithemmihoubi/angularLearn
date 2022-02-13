@@ -6,9 +6,11 @@ import {ProfileComponent} from "./profile/profile.component";
 import {ViewComponent} from "./view/view.component";
 import {DetailsComponent} from "./details/details.component";
 import {GuardAdminGuard} from "./guards/guard-admin.guard";
+import {HomeFormComponent} from "./home-form/home-form.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'form', component: HomeFormComponent},
   {path: 'about', component: AboutComponent, canActivate: [GuardAdminGuard]},
   //{path: 'profile', component: ProfileComponent},
   {path: 'contact', redirectTo: 'about', pathMatch: 'full'},
