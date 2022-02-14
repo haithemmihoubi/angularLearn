@@ -4,7 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HomeComponent} from "./home/home.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AboutComponent} from './about/about.component';
 import {ProfileComponent} from './profile/profile.component';
 import {FooterComponent} from './footer/footer.component';
@@ -15,6 +15,7 @@ import {DetailsComponent} from './details/details.component';
 import {ProfilComponent} from './profil/profil.component';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import { HomeFormComponent } from './home-form/home-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +30,14 @@ import { HomeFormComponent } from './home-form/home-form.component';
     DetailsComponent,
     ProfilComponent,
     HomeFormComponent,
+    ReactiveFormComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [
     //add hash aftter the url #
     {provide: LocationStrategy, useClass: HashLocationStrategy}
